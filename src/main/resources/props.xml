@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="AccountBasicCLI" class="kz.singularity.solidbankapp.model.AccountBasicCLI">
+        <constructor-arg index="0" ref="MyCLI"/>
+        <constructor-arg index="1" ref="BankCore"/>
+        <constructor-arg index="2" ref="AccountListingServiceImpl"/>
+    </bean>
+    <bean id="BankCore" class="kz.singularity.solidbankapp.service.BankCore">
+        <constructor-arg ref="AccountCreationServiceImpl"/>
+    </bean>
+    <bean id="AccountCreationService" class="kz.singularity.solidbankapp.service.AccountCreationService"
+          abstract="true"></bean>
+    <bean id="AccountCreationServiceImpl" class="kz.singularity.solidbankapp.service.impl.AccountCreationServiceImpl">
+        <constructor-arg ref="MemoryAccountDAO"/>
+    </bean>
+    <bean id="MemoryAccountDAO" class="kz.singularity.solidbankapp.DAO.MemoryAccountDAO"></bean>
+    <bean id="AccountListingService" class="kz.singularity.solidbankapp.service.AccountListingService"
+          abstract="true"></bean>
+    <bean id="AccountListingServiceImpl" class="kz.singularity.solidbankapp.service.impl.AccountListingServiceImpl">
+        <constructor-arg ref="MemoryAccountDAO"/>
+    </bean>
+    <bean id="AccountDAO" class="kz.singularity.solidbankapp.DAO.AccountDAO" abstract="true"></bean>
+    <bean id="CreateAccountOperationUi" class="kz.singularity.solidbankapp.model.CreateAccountOperationUI"
+          abstract="true"></bean>
+    <bean id="CLIUI" class="kz.singularity.solidbankapp.model.CLIUI" abstract="true"></bean>
+    <bean id="MyCLI" class="kz.singularity.solidbankapp.service.MyCLI"></bean>
+    <context:component-scan base-package="kz.singularity.solidbankapp"/>
+</beans>
