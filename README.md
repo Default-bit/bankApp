@@ -1,16 +1,18 @@
 # SOLID Bank App
 
-Данная программа это код программы банка написанная на основе принципа SOLID.
+This project is a bank application implemented using SOLID principles.
 
-## Инструкции по запуску программы:
-* Клонируйте репозиторий
-* Перейдите в каталог проекта
-* Откройте проект в IntelliJ IDEA Ultimate
-* Запустите SOLIDBankApp/src/main/java/kz/singularity/solidbankapp/SolidBankAppApplication
+## How to Run the Program:
+* Clone the repository: 
+``` git clone <repository_url> ```
+* Navigate to the project directory: ``` cd <project_directory> ```
+* Open the project in IntelliJ IDEA Ultimate.
+* Run the application:
+``` SOLIDBankApp/src/main/java/kz/singularity/solidbankapp/SolidBankAppApplication ```
 
 
 
-## Команды CLI:
+## CLI Commands:
 
 - `1`: show accounts
 - `2`: create account
