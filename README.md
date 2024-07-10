@@ -4,8 +4,8 @@ This project is a bank application implemented using SOLID principles.
 
 ## How to Run the Program:
 * Clone the repository: 
-``` git clone <repository_url> ```
-* Navigate to the project directory: ``` cd <project_directory> ```
+``` git clone https://github.com/Default-bit/bankApp ```
+* Navigate to the project directory: ``` cd bankApp ```
 * Open the project in IntelliJ IDEA Ultimate.
 * Run the application:
 ``` SOLIDBankApp/src/main/java/kz/singularity/solidbankapp/SolidBankAppApplication ```
